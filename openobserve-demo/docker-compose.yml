@@ -1,0 +1,16 @@
+services:
+  openobserve:
+    image: openobserve/openobserve:v0.10.4
+    container_name: openobserve
+    environment:
+      - ZO_ROOT_USER_EMAIL=admin@example.com
+      - ZO_ROOT_USER_PASSWORD=ComplexPassword123!
+    ports:
+      - "5080:5080"
+    volumes:
+      - openobserve_data:/data
+    restart: unless-stopped
+
+volumes:
+  openobserve_data:
+
